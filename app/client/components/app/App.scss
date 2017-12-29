@@ -1,0 +1,9 @@
+.app {
+  .app__search-view {
+    position: absolute;
+    left: 275px;
+    top: 50px;
+    width: calc(100% - 275px);
+    overflow-y: scroll;
+  }
+}

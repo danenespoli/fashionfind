@@ -1,0 +1,84 @@
+{
+    "businessCatalogItemId": "796200003",
+    "name": "Heritage Water-Resistant Long Trench Coat",
+    "catalogItemTypeId": "3",
+    "catalogItemSubtypeId": "14",
+    "mcmStatusCode": "601",
+    "inDcDate": "1990-01-01T00:00:00-05:00",
+    "isInStock": "true",
+    "inventoryStatusId": "0",
+    "isAssignedAtStyleLevel": "true",
+    "parentStyleId": "12919285",
+    "parentBusinessCatalogItemId": "796200",
+    "quicklookImage": {
+        "catalogContentId": "13788022",
+        "contentTypeId": "10",
+        "height": "0",
+        "width": "0",
+        "mediaTypeId": "4",
+        "path": "http://www1.assets-gap.com/webcontent/0013/788/022/cn13788022.jpg",
+        "prefixId": "0"
+    },
+    "categoryLargeImage": {
+        "catalogContentId": "13788021",
+        "contentTypeId": "275",
+        "height": "0",
+        "width": "0",
+        "mediaTypeId": "4",
+        "path": "http://www4.assets-gap.com/webcontent/0013/788/021/cn13788021.jpg",
+        "prefixId": "0"
+    },
+    "outfitCategoryLargeImage": {
+        "catalogContentId": "14020513",
+        "contentTypeId": "276",
+        "height": "0",
+        "width": "0",
+        "mediaTypeId": "4",
+        "path": "http://www3.assets-gap.com/webcontent/0014/020/513/cn14020513.jpg",
+        "prefixId": "0"
+    },
+    "avImages": {
+        "av1QuicklookImagePath": "http://www2.assets-gap.com/webcontent/0014/017/611/cn14017611.jpg",
+        "av2QuicklookImagePath": "http://www4.assets-gap.com/webcontent/0014/014/431/cn14014431.jpg",
+        "av3QuicklookImagePath": "http://www3.assets-gap.com/webcontent/0014/084/125/cn14084125.jpg",
+        "av4QuicklookImagePath": "http://www3.assets-gap.com/webcontent/0014/084/334/cn14084334.jpg",
+        "av5QuicklookImagePath": "http://www1.assets-gap.com/webcontent/0014/084/384/cn14084384.jpg",
+        "av9QuicklookImagePath": "http://www2.assets-gap.com/webcontent/0014/001/861/cn14001861.jpg"
+    },
+    "outfitQuickLookImage": {
+        "catalogContentId": "14020561",
+        "contentTypeId": "269",
+        "height": "0",
+        "width": "0",
+        "mediaTypeId": "4",
+        "path": "http://www4.assets-gap.com/webcontent/0014/020/561/cn14020561.jpg",
+        "prefixId": "0"
+    },
+    "displayColor": {
+        "displayColorId": "0",
+        "baseColorId": "1021",
+        "defaultSizeVariantId": "0"
+    },
+    "price": {
+        "currentMaxPrice": "430.0",
+        "currentMinPrice": "430.0",
+        "priceType": "1",
+        "regularMaxPrice": "430.0",
+        "regularMinPrice": "430.0",
+        "isClearanceItem": "false",
+        "minPercentageOff": "0",
+        "maxPercentageOff": "0",
+        "localizedRegularMaxPrice": "CA$430.00",
+        "localizedRegularMinPrice": "CA$430.00",
+        "localizedCurrentMaxPrice": "CA$430.00",
+        "localizedCurrentMinPrice": "CA$430.00"
+    },
+    "priceFormatXhtml": "<span class=\"priceDisplay\">CA$430.00</span>",
+    "pricePercentageOffXhtml": "",
+    "sortOrder": "0",
+    "isFirstStyleColorForSubcategory": "false",
+    "defaultSizeVariantId": "2",
+    "isOutfit": "false",
+    "variantName": "Tall",
+    "isSearchable": "true"
+}
