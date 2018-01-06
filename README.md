@@ -1,1 +1,3 @@
-# zeal
+# Fashionfind
+
+Your personal wardrobe.

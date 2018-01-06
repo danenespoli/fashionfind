@@ -1,6 +1,6 @@
 const React = require('react');
 const _ = require('lodash');
-const when = require('when');
+const Aggregator = require('../../stores/Aggregator');
 
 const SearchBar = require('../search-bar/SearchBar.jsx');
 const Item = require('../item/Item.jsx');
@@ -10,38 +10,27 @@ import SearchIcon from 'material-ui/svg-icons/action/search';
 
 module.exports = class SearchView extends React.Component {
   state = {
-    search: '',
-    banana: []
+    searchQuery: '',
+    selectedStores: [],
+    items: []
   };
 
-  getBanana = () => {
-    const deferred = when.defer();
-    if (!this.state.search.length) {
-      deferred.resolve();
-    } else {
-      const request = new XMLHttpRequest();
-      request.open('GET', '/banana?search=' + this.state.search);
-      request.onload = () => {
-        if (request.status === 200) {
-          this.setState({
-            banana: JSON.parse(request.responseText)
-          });
-          deferred.resolve();
-        }
-      };
-      request.send();
-    }
-    return deferred.promise;
+  getItems = () => {
+    Aggregator.fetchItems(this.state.selectedStores, this.state.searchQuery).then(items => {
+      this.setState({
+        items
+      });
+    });
   };
 
-  handleSearch = (e, search) => {
+  handleSearch = (e, searchQuery) => {
     this.setState({
-      search
-    }, this.getBanana);
+      searchQuery
+    }, this.getItems);
   };
 
   render() {
-    const items = _.map(this.state.banana, (item, index) => (
+    const items = _.map(this.state.items, (item, index) => (
       <Item
         key={index}
         item={item}
@@ -52,7 +41,7 @@ module.exports = class SearchView extends React.Component {
       <div className="search-view">
         <SearchBar
           handleSearch={this.handleSearch.bind(this)}
-          search={this.state.search}
+          search={this.state.searchQuery}
         />
         <div className="search-view__item-container">
           {items}
