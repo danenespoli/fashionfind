@@ -8,7 +8,7 @@ module.exports = function(app) {
     const requestUrl = 'http://bananarepublic.gapcanada.ca/resources/productSearch/v1/' + req.query.search;
     request(requestUrl, { json: true }, (err, result, body) => {
       try {
-        res.send(JSON.stringify(body.productCategoryFacetedSearch.productCategory.childProducts || []));
+        res.send(JSON.stringify(body));
       } catch(e) {
         res.send(JSON.stringify([{
           name: 'Trouble fetching products from Banana Republic'

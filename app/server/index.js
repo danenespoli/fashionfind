@@ -1,7 +1,7 @@
-var express = require('express');
-var app     = express();
-var server  = app.listen(8000);
-var path    = require('path');
+const express = require('express');
+const app = express();
+const server = app.listen(8000);
+const path = require('path');
 
 // Middleware.
 app.use(require('morgan')('combined'));

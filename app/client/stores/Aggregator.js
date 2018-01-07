@@ -1,37 +1,33 @@
+const _ = require('lodash');
 const when = require('when');
 
-const reports = {
-  temp: {
-    guid: null,
-    data: null,
-    intervalId: null
-  },
-  hum: {
-    guid: null,
-    data: null,
-    intervalId: null
-  },
-  handheld: {
-    guid: null,
-    data: null,
-    intervalId: null
-  },
+const BananaRepublicStore = require('./BananaRepublicStore');
+
+const stores = {
+  BananaRepublic: BananaRepublicStore,
 };
 
 const Aggregator = {
   fetchItems: (selectedStores, searchQuery) => {
     const deferred = when.defer();
     if (!searchQuery.length) {
-      deferred.resolve();
+      deferred.resolve([]);
     } else {
-      const request = new XMLHttpRequest();
-      request.open('GET', '/banana?search=' + searchQuery);
-      request.onload = () => {
-        if (request.status === 200) {
-          deferred.resolve(JSON.parse(request.responseText));
-        }
-      };
-      request.send();
+      when.all(
+        _.map(selectedStores, (storeName) => {
+          if (stores[storeName]) {
+            return stores[storeName].fetchItems(searchQuery);
+          } else {
+            const deferred2 = when.defer();
+            deferred2.resolve([]);
+            return deferred2.promise;
+          }
+        })
+      ).then((result) => {
+        const combinedItems = _.flatten(result);
+        console.log(combinedItems);
+        deferred.resolve(combinedItems);
+      });
     }
     return deferred.promise;
   }

@@ -1,5 +1,6 @@
 const React = require('react');
 const _ = require('lodash');
+const Stores = require('../../util/Stores');
 const Aggregator = require('../../stores/Aggregator');
 
 const SearchBar = require('../search-bar/SearchBar.jsx');
@@ -11,21 +12,24 @@ import SearchIcon from 'material-ui/svg-icons/action/search';
 module.exports = class SearchView extends React.Component {
   state = {
     searchQuery: '',
-    selectedStores: [],
+    loading: false,
+    selectedStores: _.map(Stores),
     items: []
   };
 
   getItems = () => {
     Aggregator.fetchItems(this.state.selectedStores, this.state.searchQuery).then(items => {
       this.setState({
-        items
+        items,
+        loading: false
       });
     });
   };
 
   handleSearch = (e, searchQuery) => {
     this.setState({
-      searchQuery
+      searchQuery,
+      loading: true
     }, this.getItems);
   };
 
