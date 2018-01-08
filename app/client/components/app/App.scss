@@ -1,14 +1,15 @@
 $top-nav-height: 50px;
-$sidebar-width: 200px;
+$sidebar-width: 225px;
 
 .app {
   &__top-nav {
-    position: absolute;
+    position: fixed;
     height: $top-nav-height;
+    z-index: 999;
     width: 100%;
   }
   &__sidebar {
-    position: absolute;
+    position: fixed;
     top: $top-nav-height;
     height: 100%;
     width: $sidebar-width;

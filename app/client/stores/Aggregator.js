@@ -11,7 +11,10 @@ const Aggregator = {
   fetchItems: (selectedStores, searchQuery) => {
     const deferred = when.defer();
     if (!searchQuery.length) {
-      deferred.resolve([]);
+      deferred.resolve({
+        searchQuery,
+        items: []
+      });
     } else {
       when.all(
         _.map(selectedStores, (storeName) => {
