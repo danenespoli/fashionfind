@@ -1,3 +1,9 @@
 .search-view {
   padding: 15px;
+  &__item-container {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

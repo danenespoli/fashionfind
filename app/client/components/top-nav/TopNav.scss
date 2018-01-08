@@ -1,0 +1,12 @@
+.top-nav {
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  &__logo {
+    font-size: 25px;
+    margin: auto;
+    margin-left: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

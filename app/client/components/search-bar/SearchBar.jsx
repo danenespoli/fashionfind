@@ -14,7 +14,10 @@ module.exports = class SearchBar extends React.Component {
           fullWidth={true}
           value={this.props.search}
           style={{
-            fontFamily: 'Arapey'
+            fontFamily: 'Arapey',
+          }}
+          inputStyle={{
+            color: '#444444'
           }}
         />
       </div>

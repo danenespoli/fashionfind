@@ -26,7 +26,10 @@ const Aggregator = {
       ).then((result) => {
         const combinedItems = _.flatten(result);
         console.log(combinedItems);
-        deferred.resolve(combinedItems);
+        deferred.resolve({
+          searchQuery,
+          items: combinedItems
+        });
       });
     }
     return deferred.promise;

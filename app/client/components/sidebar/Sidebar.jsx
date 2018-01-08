@@ -9,7 +9,8 @@ import SearchIcon from 'material-ui/svg-icons/action/search';
 module.exports = class App extends React.Component {
   render() {
     return (
-      <div />
+      <div className="sidebar">
+      </div>
     );
   }
 };

@@ -1,5 +1,23 @@
 .item {
+  display: inline-block;
+  height: 310px;
+  width: 250px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  border-radius: 2px;
+  z-index: 1;
+  margin: 10px;
+  padding: 10px;
   cursor: pointer;
-  font-size: 20px;
-  width: fit-content;
+  &__img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__name {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    font-size: 18px;
+  }
 }

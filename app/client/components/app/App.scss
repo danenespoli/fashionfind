@@ -1,9 +1,23 @@
+$top-nav-height: 50px;
+$sidebar-width: 200px;
+
 .app {
-  .app__search-view {
+  &__top-nav {
     position: absolute;
-    left: 275px;
-    top: 50px;
-    width: calc(100% - 275px);
+    height: $top-nav-height;
+    width: 100%;
+  }
+  &__sidebar {
+    position: absolute;
+    top: $top-nav-height;
+    height: 100%;
+    width: $sidebar-width;
+  }
+  &__search-view {
+    position: absolute;
+    top: $top-nav-height;
+    left: $sidebar-width;
+    width: calc(100% - #{$sidebar-width});
     overflow-y: scroll;
   }
 }

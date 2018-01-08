@@ -11,6 +11,7 @@ const BananaRepublicStore = {
         }
         return _.map((body.productCategoryFacetedSearch.productCategory.childProducts || []), (item) => ({
           name: item.name,
+          imgSm: item.quicklookImage.path,
           link: `http://bananarepublic.gapcanada.ca/browse/product.do?pid=${item.businessCatalogItemId}`
         }))
       } catch(e) {
