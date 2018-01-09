@@ -2,9 +2,11 @@ const _ = require('lodash');
 const when = require('when');
 
 const BananaRepublicStore = require('./BananaRepublicStore');
+const JCrewStore = require('./JCrewStore');
 
 const stores = {
   BananaRepublic: BananaRepublicStore,
+  JCrew: JCrewStore,
 };
 
 const Aggregator = {

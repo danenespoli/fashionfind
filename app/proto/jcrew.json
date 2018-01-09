@@ -1,0 +1,31 @@
+{
+    "extended-size-group-id": "190340",
+    "extendedSize": "Petite",
+    "show-all-colors": false,
+    "apiLink": "/data/v1/CA/3580/products/05364/c/womens_category/outerwear/trenchesandanoraks",
+    "colors": [
+        {
+            "colorName": "MOSSY BROWN",
+            "colorCode": "WB1325"
+        }
+    ],
+    "productId": "845524441835350",
+    "productDescription": "The petite downtown field jacket",
+    "priority": 99999,
+    "listPrice": {
+        "amount": 194,
+        "formatted": "CAD 194.00"
+    },
+    "url": "/ca/p/womens_category/outerwear/trenchesandanoraks/the-petite-downtown-field-jacket/05364",
+    "productCode": "05364",
+    "tiles": [
+        "WB1325"
+    ],
+    "baseColorCode": "WB1325",
+    "folderId": "2534374302028624",
+    "variations": "19034",
+    "baseProductCode": "19034",
+    "defaultColorCode": "WP5840",
+    "alsoIn": "Regular, Tall",
+    "shotType": "_m,_d1"
+}

@@ -53,6 +53,7 @@ $sale: #EE4E4E;
         font-size: 20px;
         padding: 0 5px;
         &--sale {
+          border: 1px solid rgba(238, 78, 78, 0.2);
           color: $sale;
         }
       }

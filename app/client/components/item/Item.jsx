@@ -24,8 +24,8 @@ module.exports = class Item extends React.Component {
             </div>
           </div>
         </div>
-        <div className="item__logo-container">
-          <img className="item__logo-container__logo" src="img/banana-republic.png"/>
+        <div className="item__logo-container" style={{ height: this.props.item.logoHeight }}>
+          <img className="item__logo-container__logo" src={this.props.item.logo}/>
         </div>
       </div>
     );
