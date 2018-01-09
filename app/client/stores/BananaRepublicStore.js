@@ -11,8 +11,8 @@ const BananaRepublicStore = {
         return _.map((body.productCategoryFacetedSearch.productCategory.childProducts || []), (item) => ({
           name: item.name,
           imgSm: item.quicklookImage.path,
-          price: parseFloat(item.price.currentMinPrice).toFixed(2),
-          sale: parseFloat(item.price.currentMinPrice).toFixed(2) !== parseFloat(item.price.regularMinPrice).toFixed(2),
+          price: parseFloat(item.price.currentMinPrice),
+          sale: parseFloat(item.price.currentMinPrice) !== parseFloat(item.price.regularMinPrice),
           link: `http://bananarepublic.gapcanada.ca/browse/product.do?pid=${item.businessCatalogItemId}`,
           logo: 'img/banana-republic.png',
           logoHeight: '15px',

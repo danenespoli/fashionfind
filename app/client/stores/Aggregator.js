@@ -30,7 +30,16 @@ const Aggregator = {
         })
       ).then((result) => {
         const combinedItems = _.flatten(result);
-        console.log(combinedItems);
+        // const combinedItems = [];
+        // while (_.max(_.map(result, (retailer) => (
+        //   retailer.length
+        // )))) {
+        //   const retailersLeft = _.filter(result, (retailer) => (
+        //     retailer.length
+        //   ));
+        //   const num = Math.floor(Math.random() * retailersLeft.length);
+        //   combinedItems.push(retailersLeft[num].shift());
+        // }
         deferred.resolve({
           searchQuery,
           items: combinedItems

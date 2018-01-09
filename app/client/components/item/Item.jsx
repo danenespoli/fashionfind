@@ -20,7 +20,7 @@ module.exports = class Item extends React.Component {
           </div>
           <div className="item__details__price-container">
             <div className={`item__details__price-container__price ${this.props.item.sale ? 'item__details__price-container__price--sale' : ''}`}>
-              ${this.props.item.price}
+              ${this.props.item.price.toFixed(2)}
             </div>
           </div>
         </div>
