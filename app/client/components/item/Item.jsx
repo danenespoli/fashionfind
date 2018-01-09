@@ -11,9 +11,21 @@ module.exports = class Item extends React.Component {
   render() {
     return (
       <div className="item" onClick={this.openLink}>
-        <img className="item__img" src={this.props.item.imgSm}/>
-        <div className="item__name">
-          {this.props.item.name}
+        <div className="item__img-container">
+          <img className="item__img-container__img" src={this.props.item.imgSm}/>
+        </div>
+        <div className="item__details">
+          <div className="item__details__name">
+            {this.props.item.name}
+          </div>
+          <div className="item__details__price-container">
+            <div className={`item__details__price-container__price ${this.props.item.sale ? 'item__details__price-container__price--sale' : ''}`}>
+              ${this.props.item.price}
+            </div>
+          </div>
+        </div>
+        <div className="item__logo-container">
+          <img className="item__logo-container__logo" src="img/banana-republic.png"/>
         </div>
       </div>
     );
