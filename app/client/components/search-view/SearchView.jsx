@@ -30,6 +30,7 @@ module.exports = class SearchView extends React.Component {
   getItems = () => {
     Aggregator.fetchItems(this.state.selectedStores, this.state.searchQuery).then(res => {
       if (res.searchQuery === this.state.searchQuery) {   // ensure state.items always reflects search query (race condition)
+        window.scrollTo(0, 0);    // scroll up all the way
         this.setState({
           items: res.items,
           loading: false

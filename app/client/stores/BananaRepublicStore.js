@@ -5,9 +5,9 @@ const BananaRepublicStore = {
   fetchItems: (searchQuery) => (
     Request.get('/banana-republic?search=' + searchQuery).then((body) => {
       try {
-        if (body.productCategoryFacetedSearch.autoCorrectedText) {
-          return [];
-        }
+        // if (body.productCategoryFacetedSearch.autoCorrectedText) {
+        //   return [];
+        // }
         return _.map((body.productCategoryFacetedSearch.productCategory.childProducts || []), (item) => ({
           name: item.name,
           imgSm: item.quicklookImage.path,
