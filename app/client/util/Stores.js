@@ -1,6 +1,6 @@
 const Stores = {
   BananaRepublic: 'BananaRepublic',
-  RWCO: 'RWCO',
+  Rwco: 'Rwco',
   JCrew: 'JCrew',
 }
 

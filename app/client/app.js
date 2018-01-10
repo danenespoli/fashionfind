@@ -6,7 +6,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 const theme = getMuiTheme({
   palette: {
-    primary1Color: '#582A72'
+    primary1Color: 'rgb(52, 52, 119)'
   }
 });
 

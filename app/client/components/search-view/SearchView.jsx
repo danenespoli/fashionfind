@@ -14,11 +14,19 @@ module.exports = class SearchView extends React.Component {
   state = {
     searchQuery: '',
     loading: false,
-    selectedStores: _.map(Stores),
+    selectedStores: [],
     items: []
   };
 
+  componentWillReceiveProps(props) {
+    this.setState({
+      selectedStores: props.selectedStores,
+      loading: true
+    }, this.getItems);
+  }
+
   getItems = () => {
+    console.log('Getting items!');
     Aggregator.fetchItems(this.state.selectedStores, this.state.searchQuery).then(res => {
       if (res.searchQuery === this.state.searchQuery) {   // ensure state.items always reflects search query (race condition)
         this.setState({
