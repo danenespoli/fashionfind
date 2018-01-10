@@ -13,20 +13,27 @@ $blue: rgb(52, 52, 119);
       font-size: 12px;
       text-transform: uppercase;
       color: $gray;
-      margin-bottom: 20px;
+      margin: 40px 0 20px;
+      &--top {
+        margin-top: 0;
+      }
     }
     &__store {
       height: 60px;
-      border: 1px solid $blue;
-      border-radius: 2px;
-      margin: 3px;
+      border: 1px solid rgba(52, 52, 119, 0.5);
+      margin: 4px;
+      border-radius: 3px;
       opacity: 0.25;
-      transition: opacity 0.3s;
+      transition: opacity .3s, border .5s;
       cursor: pointer;
+      &:hover {
+        border: 1px solid rgba(52, 52, 119, 1);
+        transition: opacity .3s, border .5s;
+      }
       &--selected {
-        background: linear-gradient(to bottom right, transparent, rgba(52, 52, 119, 0.05));
+        background: linear-gradient(to bottom, transparent, rgba(52, 52, 119, 0.1));
         opacity: 0.75;
-        transition: opacity 0.3s;
+        transition: opacity .3s, border .5s;
       }
       z-index: 999;
       &__logo-container {
@@ -43,6 +50,9 @@ $blue: rgb(52, 52, 119);
           object-fit: contain;
         }
       }
+    }
+    &__filter {
+
     }
   }
 }

@@ -36,10 +36,13 @@ module.exports = class App extends React.Component {
     return (
       <div className="sidebar">
         <div className="sidebar__store-selection">
-          <div className="sidebar__store-selection__header-text">
+          <div className="sidebar__store-selection__header-text sidebar__store-selection__header-text--top">
             Selected stores
           </div>
           {stores}
+          <div className="sidebar__store-selection__header-text">
+            Filters
+          </div>
         </div>
       </div>
     );
