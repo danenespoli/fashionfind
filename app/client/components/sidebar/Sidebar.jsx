@@ -13,13 +13,13 @@ module.exports = class App extends React.Component {
         path: 'img/banana-republic.png',
         height: '20px'
       },
-      Rwco: {
-        path: 'img/rwco.png',
-        height: '15px'
-      },
       JCrew: {
         path: 'img/jcrew.png',
         height: '26.66px'
+      },
+      Rwco: {
+        path: 'img/rwco.png',
+        height: '15px'
       }
     };
   }
@@ -37,7 +37,7 @@ module.exports = class App extends React.Component {
       <div className="sidebar">
         <div className="sidebar__store-selection">
           <div className="sidebar__store-selection__header-text sidebar__store-selection__header-text--top">
-            Selected stores
+            Retailers
           </div>
           {stores}
           <div className="sidebar__store-selection__header-text">

@@ -1,7 +1,7 @@
 const Stores = {
   BananaRepublic: 'BananaRepublic',
-  Rwco: 'Rwco',
   JCrew: 'JCrew',
+  Rwco: 'Rwco'
 }
 
 module.exports = Stores;

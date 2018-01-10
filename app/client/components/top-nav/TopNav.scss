@@ -1,13 +1,23 @@
+$sidebar-width: 225px;
+$padding: 20px;
+
 .top-nav {
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
   background-color: white;
   &__logo {
     font-size: 25px;
-    margin: auto;
-    margin-left: 15px;
     position: relative;
     top: 50%;
+    left: $sidebar-width/4;
     transform: translateY(-50%);
+  }
+  &__search {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: $sidebar-width;
+    width: calc(100% - #{$sidebar-width} - 2*#{$padding});
+    padding: 0 $padding;
   }
 }

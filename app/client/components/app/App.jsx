@@ -22,7 +22,8 @@ module.exports = class App extends React.Component {
   }
 
   state = {
-    selectedStores: []
+    selectedStores: [],
+    searchQuery: ''
   }
 
   toggleStore = (storeToToggle) => {
@@ -33,11 +34,21 @@ module.exports = class App extends React.Component {
     });
   }
 
+  handleSearch = (e, searchQuery) => {
+    this.setState({
+      searchQuery,
+      loading: true
+    }, this.getItems);
+  };
+
   render() {
     return (
       <div className="app">
         <div className="app__top-nav">
-          <TopNav />
+          <TopNav
+            handleSearch={this.handleSearch}
+            search={this.state.searchQuery}
+          />
         </div>
         <div className="app__sidebar">
           <Sidebar
@@ -47,6 +58,7 @@ module.exports = class App extends React.Component {
         </div>
         <div className="app__search-view">
           <SearchView
+            searchQuery={this.state.searchQuery}
             selectedStores={_.map(_.pickBy(this.state.selectedStores, (selected) => (
               selected
             )), (selected, store) => (

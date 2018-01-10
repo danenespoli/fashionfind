@@ -19,14 +19,15 @@ module.exports = class SearchView extends React.Component {
   };
 
   componentWillReceiveProps(props) {
+    console.log(props);
     this.setState({
       selectedStores: props.selectedStores,
+      searchQuery: props.searchQuery,
       loading: true
     }, this.getItems);
   }
 
   getItems = () => {
-    console.log('Getting items!');
     Aggregator.fetchItems(this.state.selectedStores, this.state.searchQuery).then(res => {
       if (res.searchQuery === this.state.searchQuery) {   // ensure state.items always reflects search query (race condition)
         this.setState({
@@ -35,13 +36,6 @@ module.exports = class SearchView extends React.Component {
         });
       }
     });
-  };
-
-  handleSearch = (e, searchQuery) => {
-    this.setState({
-      searchQuery,
-      loading: true
-    }, this.getItems);
   };
 
   render() {
@@ -54,10 +48,6 @@ module.exports = class SearchView extends React.Component {
 
     return (
       <div className="search-view">
-        <SearchBar
-          handleSearch={this.handleSearch.bind(this)}
-          search={this.state.searchQuery}
-        />
         {
           this.state.loading &&
           <CircularProgress />
