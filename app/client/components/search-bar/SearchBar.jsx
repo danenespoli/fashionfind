@@ -9,7 +9,7 @@ module.exports = class SearchBar extends React.Component {
     return (
       <div className="search-bar">
         <TextField
-          hintText="Search..."
+          hintText="Find..."
           onChange={this.props.handleSearch}
           fullWidth={true}
           value={this.props.search}

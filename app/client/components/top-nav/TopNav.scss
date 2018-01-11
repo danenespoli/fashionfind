@@ -9,8 +9,8 @@ $padding: 20px;
   &__logo {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    left: $sidebar-width/4;
+    transform: translate(-50%, -50%);
+    left: $sidebar-width/2;
     font-size: 25px;
     letter-spacing: -1px;
   }

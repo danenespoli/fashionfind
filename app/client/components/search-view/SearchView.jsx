@@ -19,7 +19,6 @@ module.exports = class SearchView extends React.Component {
   };
 
   componentWillReceiveProps(props) {
-    console.log(props);
     this.setState({
       selectedStores: props.selectedStores,
       searchQuery: props.searchQuery,
