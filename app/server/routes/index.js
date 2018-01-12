@@ -27,13 +27,7 @@ module.exports = function(app) {
       try {
         res.send(JSON.stringify(body));
       } catch(e) {
-        res.send(JSON.stringify({
-          productCategoryFacetedSearch: {
-            productCategory: {
-              childProducts: []
-            }
-          }
-        }));
+        res.send(JSON.stringify([]));
       }
     });
   });

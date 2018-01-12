@@ -4,7 +4,6 @@ const Request = require('../util/Request');
 const JcrewStore = {
   fetchItems: (searchQuery) => (
     Request.get('/jcrew?search=' + searchQuery).then((body) => {
-      console.log(body);
       try {
         return _.map((body.productList[0].products || []), (item) => ({
           name: item.productDescription,
