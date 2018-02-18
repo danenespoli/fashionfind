@@ -7,7 +7,6 @@ const SearchBar = require('../search-bar/SearchBar.jsx');
 const Item = require('../item/Item.jsx');
 
 import TextField from 'material-ui/TextField';
-import CircularProgress from 'material-ui/CircularProgress';
 import SearchIcon from 'material-ui/svg-icons/action/search';
 
 module.exports = class SearchView extends React.Component {
@@ -48,10 +47,6 @@ module.exports = class SearchView extends React.Component {
 
     return (
       <div className="search-view">
-        {
-          this.state.loading &&
-          <CircularProgress />
-        }
         <div className="search-view__item-container">
           {items}
         </div>

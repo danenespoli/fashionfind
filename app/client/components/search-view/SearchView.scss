@@ -1,9 +1,11 @@
 .search-view {
-  padding: 15px;
+  height: 100%;
   &__item-container {
+    padding: 15px;
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    z-index: -1;
   }
 }

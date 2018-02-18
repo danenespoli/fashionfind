@@ -7,6 +7,7 @@ const Stores = require('../../util/Stores');
 
 const TopNav = require('../top-nav/TopNav.jsx');
 const Sidebar = require('../sidebar/Sidebar.jsx');
+const Loader = require('../loader/Loader.jsx');
 const SearchView = require('../search-view/SearchView.jsx');
 
 import TextField from 'material-ui/TextField';
@@ -23,7 +24,8 @@ module.exports = class App extends React.Component {
 
   state = {
     selectedStores: [],
-    searchQuery: ''
+    searchQuery: '',
+    loading: false
   }
 
   toggleStore = (storeToToggle) => {
@@ -56,8 +58,12 @@ module.exports = class App extends React.Component {
             toggleStore={this.toggleStore}
           />
         </div>
+        <div className="app__loader">
+          <Loader />
+        </div>
         <div className="app__search-view">
           <SearchView
+            loading={this.state.loading}
             searchQuery={this.state.searchQuery}
             selectedStores={_.map(_.pickBy(this.state.selectedStores, (selected) => (
               selected

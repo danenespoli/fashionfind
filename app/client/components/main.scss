@@ -1,8 +1,10 @@
 @import 'app/App.scss';
-@import 'top-nav/TopNav.scss';
+@import 'item/Item.scss';
+@import 'loader/Loader.scss';
+@import 'search-bar/SearchBar.scss';
 @import 'search-view/SearchView.scss';
 @import 'sidebar/Sidebar.scss';
-@import 'item/Item.scss';
+@import 'top-nav/TopNav.scss';
 
 
 * {
