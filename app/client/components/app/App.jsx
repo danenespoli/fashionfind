@@ -4,6 +4,7 @@ const when = require('when');
 const request = require('request');
 
 const Stores = require('../../util/Stores');
+const Aggregator = require('../../stores/Aggregator');
 
 const TopNav = require('../top-nav/TopNav.jsx');
 const Sidebar = require('../sidebar/Sidebar.jsx');
@@ -25,7 +26,8 @@ module.exports = class App extends React.Component {
   state = {
     selectedStores: [],
     searchQuery: '',
-    loading: false
+    loading: false,
+    items: []
   }
 
   toggleStore = (storeToToggle) => {
@@ -33,7 +35,7 @@ module.exports = class App extends React.Component {
       selectedStores: _.mapValues(this.state.selectedStores, (selected, store) => (
         storeToToggle === store ? !selected : selected
       ))
-    });
+    }, this.getItems);
   }
 
   handleSearch = (e, searchQuery) => {
@@ -41,6 +43,23 @@ module.exports = class App extends React.Component {
       searchQuery,
       loading: true
     }, this.getItems);
+  };
+
+  getItems = () => {
+    const selectedStores = _.map(_.pickBy(this.state.selectedStores, (selected) => (
+      selected
+    )), (selected, store) => (
+      store
+    ));
+    Aggregator.fetchItems(selectedStores, this.state.searchQuery).then(res => {
+      if (res.searchQuery === this.state.searchQuery) {   // ensure state.items always reflects search query (race condition)
+        window.scrollTo(0, 0);    // scroll up all the way
+        this.setState({
+          items: res.items,
+          loading: false
+        });
+      }
+    });
   };
 
   render() {
@@ -58,18 +77,17 @@ module.exports = class App extends React.Component {
             toggleStore={this.toggleStore}
           />
         </div>
-        <div className="app__loader">
-          <Loader />
-        </div>
+        {
+          this.state.loading &&
+          <div className="app__loader">
+            <Loader
+              loading={this.state.loading}
+            />
+          </div>
+        }
         <div className="app__search-view">
           <SearchView
-            loading={this.state.loading}
-            searchQuery={this.state.searchQuery}
-            selectedStores={_.map(_.pickBy(this.state.selectedStores, (selected) => (
-              selected
-            )), (selected, store) => (
-              store
-            ))}
+            items={this.state.items}
           />
         </div>
       </div>
